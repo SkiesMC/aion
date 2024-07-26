@@ -12,7 +12,7 @@ import java.nio.file.Path
 abstract class AionKotlinPlugin :
     JavaPlugin(),
     AionPlugin {
-    override val dataDirectory: Path = dataFolder.toPath()
+    final override val dataDirectory: Path = dataFolder.toPath()
 
     override suspend fun onLoadAsync() = Unit
 
