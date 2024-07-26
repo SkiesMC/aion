@@ -6,6 +6,7 @@ run-task = "2.3.0"
 kotlinx-coroutines = "1.9.0-RC"
 mccoroutine = "2.18.0"
 shadow = "8.1.8"
+maven-publish = "0.29.0"
 
 [libraries]
 kotlin-bom = { module = "org.jetbrains.kotlin:kotlin-bom", version.ref = "kotlin" }
@@ -27,3 +28,4 @@ kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 paperweight-userdev = { id = "io.papermc.paperweight.userdev", version.ref = "paperweight" }
 run-paper = { id = "xyz.jpenilla.run-paper", version.ref = "run-task" }
 shadow = { id = "io.github.goooler.shadow", version.ref = "shadow" }
+maven-publish = { id = "com.vanniktech.maven.publish", version.ref = "maven-publish" }

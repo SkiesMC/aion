@@ -7,6 +7,7 @@ plugins {
     alias(libs.plugins.paperweight.userdev)
     alias(libs.plugins.run.paper)
     alias(libs.plugins.shadow)
+    alias(libs.plugins.maven.publish)
 }
 
 repositories {
@@ -63,4 +64,20 @@ tasks {
             dependsOn(processPaperPluginYml)
         }
     }
+}
+
+publishing {
+    repositories {
+        maven("https://maven.pkg.github.com/SkiesMC/aion") {
+            name = "githubPackages"
+            credentials {
+                username = providers.gradleProperty("github.actor").getOrElse(System.getenv("GITHUB_ACTOR"))
+                password = providers.gradleProperty("github.token").getOrElse(System.getenv("GITHUB_TOKEN"))
+            }
+        }
+    }
+}
+
+mavenPublishing {
+    coordinates(artifactId = "${rootProject.name}-core")
 }
