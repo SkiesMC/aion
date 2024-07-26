@@ -1,7 +1,7 @@
 package com.skiesmc.aion.world
 
+import com.skiesmc.aion.key.asBukkit
 import com.skiesmc.aion.server.PaperServer
-import io.github.grassmc.typhon.key.asBukkit
 import net.kyori.adventure.key.Key
 import org.bukkit.World
 import java.util.UUID

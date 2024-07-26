@@ -1,4 +1,4 @@
-package io.github.grassmc.typhon.key
+package com.skiesmc.aion.key
 
 import net.kyori.adventure.key.Key
 import org.bukkit.NamespacedKey
