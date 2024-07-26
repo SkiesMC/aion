@@ -1,4 +1,4 @@
-package com.skiesmc.aion.plugin
+package com.skiesmc.aion
 
 import org.bukkit.plugin.java.JavaPlugin
 

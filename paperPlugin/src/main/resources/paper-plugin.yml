@@ -1,7 +1,7 @@
 name: Aion
 version: $version
 api-version: "1.21"
-main: com.skiesmc.aion.plugin.AionCorePlugin
+main: com.skiesmc.aion.AionCorePlugin
 bootstrapper: com.skiesmc.aion.plugin.bootstrap.AionPluginBoostrap
 authors:
   - SkiesMC
