@@ -1,0 +1,17 @@
+### Gradle
+.gradle/
+build/
+
+### InteliJ IDEA
+.idea/*
+!.idea/copyright
+!.idea/inspectionProfiles
+!.idea/scopes
+!.idea/icon.svg
+
+### Kotlin
+.kotlin/
+
+### Others
+logs/
+run/

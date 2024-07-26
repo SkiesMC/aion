@@ -1,0 +1,66 @@
+@file:Suppress("UnstableApiUsage")
+
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
+plugins {
+    alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.paperweight.userdev)
+    alias(libs.plugins.run.paper)
+    alias(libs.plugins.shadow)
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    paperweight.paperDevBundle(libs.versions.paper)
+    api(platform(libs.kotlin.bom))
+    api(libs.kotlin.stdlib)
+    api(libs.kotlin.reflect)
+    api(platform(libs.kotlinx.coroutines.bom))
+    api(libs.kotlinx.coroutines.core)
+    api(libs.bundles.mccoroutine.folia)
+}
+
+val jdkVersion: String by project
+kotlin {
+    jvmToolchain {
+        languageVersion = JavaLanguageVersion.of(jdkVersion)
+    }
+    compilerOptions {
+        jvmTarget = JvmTarget.fromTarget(jdkVersion)
+    }
+}
+
+testing {
+    suites {
+        named<JvmTestSuite>(JavaPlugin.TEST_TASK_NAME) {
+            useKotlinTest(libs.versions.kotlin)
+        }
+    }
+}
+
+tasks {
+    val processPaperPluginYml by registering(ProcessResources::class)
+    afterEvaluate {
+        processPaperPluginYml {
+            mustRunAfter(processResources)
+            from(sourceSets.main.map { it.resources })
+            filesMatching("paper-plugin.yml") {
+                filteringCharset = Charsets.UTF_8.name()
+                expand("version" to project.version)
+            }
+            sourceSets.main
+                .map { it.output.resourcesDir }
+                .orNull
+                ?.let { into(it) }
+        }
+        jar {
+            dependsOn(processPaperPluginYml)
+        }
+        shadowJar {
+            dependsOn(processPaperPluginYml)
+        }
+    }
+}
