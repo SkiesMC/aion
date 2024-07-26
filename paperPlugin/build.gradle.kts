@@ -1,5 +1,6 @@
 @file:Suppress("UnstableApiUsage")
 
+import io.papermc.paperweight.userdev.ReobfArtifactConfiguration
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
@@ -78,6 +79,6 @@ publishing {
     }
 }
 
-mavenPublishing {
-    coordinates(artifactId = "${rootProject.name}-core")
+paperweight {
+    reobfArtifactConfiguration = ReobfArtifactConfiguration.MOJANG_PRODUCTION
 }

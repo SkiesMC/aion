@@ -6,5 +6,14 @@ plugins {
 
 rootProject.name = "aion"
 
-include("paperPlugin")
-include("gradlePlugin")
+subproject("core", "paperPlugin")
+subproject("gradle-plugin", "gradlePlugin")
+
+fun subproject(
+    module: String,
+    dir: String,
+) {
+    val name = "${rootProject.name}-$module"
+    include(name)
+    project(":$name").projectDir = file(dir)
+}
