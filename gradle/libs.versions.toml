@@ -7,6 +7,7 @@ kotlinx-coroutines = "1.9.0-RC"
 mccoroutine = "2.18.0"
 shadow = "8.1.8"
 maven-publish = "0.29.0"
+invui = "1.34"
 
 [libraries]
 kotlin-bom = { module = "org.jetbrains.kotlin:kotlin-bom", version.ref = "kotlin" }
@@ -19,6 +20,8 @@ mccoroutine-folia-api = { module = "com.github.shynixn.mccoroutine:mccoroutine-f
 mccoroutine-folia-core = { module = "com.github.shynixn.mccoroutine:mccoroutine-folia-core", version.ref = "mccoroutine" }
 paperweight-userdev = { module = "io.papermc.paperweight:paperweight-userdev", version.ref = "paperweight" }
 run-task = { module = "xyz.jpenilla:run-task", version.ref = "run-task" }
+invui-kotlin = { module = "xyz.xenondevs.invui:invui-kotlin", version.ref = "invui" }
+inventory-access-r20 = { module = "xyz.xenondevs.invui:inventory-access-r20", version.ref = "invui" }
 
 [bundles]
 mccoroutine-folia = ["mccoroutine-folia-api", "mccoroutine-folia-core"]

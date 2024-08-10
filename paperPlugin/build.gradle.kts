@@ -13,6 +13,7 @@ plugins {
 
 repositories {
     mavenCentral()
+    maven("https://repo.xenondevs.xyz/releases")
 }
 
 dependencies {
@@ -23,6 +24,10 @@ dependencies {
     api(platform(libs.kotlinx.coroutines.bom))
     api(libs.kotlinx.coroutines.core)
     api(libs.bundles.mccoroutine.folia)
+    api(libs.invui.kotlin) {
+        exclude(group = "org.jetbrains.kotlin")
+    }
+    implementation(libs.inventory.access.r20)
 }
 
 val jdkVersion: String by project
