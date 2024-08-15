@@ -5,7 +5,7 @@ import kotlinx.coroutines.runBlocking
 import org.bukkit.plugin.java.JavaPlugin
 
 /**
- * Base class for Typhon Kotlin plugins.
+ * Base class for Aion Kotlin plugins.
  * This class provides the functionality for a Paper plugin with Kotlin Coroutines support.
  */
 abstract class AionKotlinPlugin :
