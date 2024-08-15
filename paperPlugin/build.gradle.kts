@@ -58,10 +58,7 @@ tasks {
                 filteringCharset = Charsets.UTF_8.name()
                 expand("version" to project.version)
             }
-            sourceSets.main
-                .map { it.output.resourcesDir }
-                .orNull
-                ?.let { into(it) }
+            into(sourceSets.main.map { it.output.resourcesDir!! })
         }
         jar {
             dependsOn(processPaperPluginYml)
