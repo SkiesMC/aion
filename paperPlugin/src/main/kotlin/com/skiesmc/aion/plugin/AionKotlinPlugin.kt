@@ -28,7 +28,6 @@ abstract class AionKotlinPlugin :
         runBlocking {
             onEnableAsync()
         }
-        server.servicesManager
         mcCoroutine.getCoroutineSession(this).isManipulatedServerHeartBeatEnabled = false
     }
 
