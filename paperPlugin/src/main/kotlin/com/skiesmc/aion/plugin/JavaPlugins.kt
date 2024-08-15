@@ -43,6 +43,7 @@ internal fun firstJavaPlugin() =
     stackWalker
         .walk { stream ->
             stream
+                .skip(2)
                 .map { it.declaringClass.classLoader as? ConfiguredPluginClassLoader }
                 .filter { it != null }
                 .map { it?.plugin }
